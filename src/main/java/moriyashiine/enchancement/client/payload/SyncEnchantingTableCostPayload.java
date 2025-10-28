@@ -23,7 +23,7 @@ public record SyncEnchantingTableCostPayload(int cost) implements CustomPayload 
 	}
 
 	public static void send(ServerPlayerEntity player, int cost) {
-		ServerPlayNetworking.send(player, new SyncEnchantingTableCostPayload(cost));
+		ServerPlayNetworking.send(player, new SyncEnchantingTableCostPayload(0));
 	}
 
 	public static class Receiver implements ClientPlayNetworking.PlayPayloadHandler<SyncEnchantingTableCostPayload> {
